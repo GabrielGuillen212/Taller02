@@ -56,16 +56,11 @@ public class Main {
         estudiantes.forEach(e -> System.out.println("- " + e.getNombre()));
         
         // Obtener nombres de todos los asistentes
-        List<String> nombres = transmision.getAsistentes()
-                .stream()
-                .map(Usuario::getNombre)
-                .collect(Collectors.toList());
-        
-        System.out.println("\n=== RESUMEN ===");
-        System.out.println("Total de estudiantes: " + estudiantes.size());
-        System.out.println("Total de mensajes: " + transmision.getMensajes().size());
-        System.out.println("Todos los asistentes: " + nombres);
-        
+        ///cambio a poo
+        System.out.println();
+        StatsService.mostrarAsistentes(transmision);
+        /// hasta aqui
+
         // Finalizar transmisión
         System.out.println();
         transmision.finalizarTransmision();

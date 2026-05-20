@@ -6,12 +6,13 @@ import java.util.stream.Collectors;
 public class StatsService {
     
     public static void mostrarEstadisticas(Transmision transmision) {
-        System.out.println("\n=== ESTADÍSTICAS DE LA TRANSMISIÓN ===");
-        System.out.println("Título: " + transmision.getTitulo());
-        System.out.println("Profesor: " + transmision.getProfesor().getNombre());
-        System.out.println("Total de asistentes: " + transmision.getAsistentes().size());
-        System.out.println("Total de mensajes: " + transmision.getMensajes().size());
-        
+        //cambio de estructurado a poo (
+        System.out.println("\n=== ESTADÍSTICAS DE LA TRANSMISIÓN ===" + "\n" +
+                            "Título: " + transmision.getTitulo() + "\n" +
+                            "Profesor: " + transmision.getProfesor().getNombre() + "\n" +
+                            "Total de asistentes: " + transmision.getAsistentes().size() + "\n" +
+                            "Total de mensajes: " + transmision.getMensajes().size());
+        //hasta aqui 
         long estudiantes = transmision.getAsistentes().stream()
                 .filter(u -> "estudiante".equals(u.getRol()))
                 .count();
