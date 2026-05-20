@@ -36,18 +36,12 @@ public class Transmision {
     public void unirUsuario(Usuario usuario) {
         asistentes.add(usuario);
 
-        for (TransmisionListener listener : listeners) {
-            listener.onUsuarioUnido(this, usuario);
-        }
     }
 
     public void enviarMensaje(Usuario usuario, String texto) {
         Mensaje mensaje = new Mensaje(usuario, texto);
         mensajes.add(mensaje);
 
-        for (TransmisionListener listener : listeners) {
-            listener.onMensajeEnviado(this, mensaje);
-        }
     }
 
     public String getTitulo() {
